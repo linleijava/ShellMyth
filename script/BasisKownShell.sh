@@ -53,3 +53,23 @@ declare -x wife=yangyang
 # 时间设置
 time=`date "+ %Y-%m-%d %H:%M:%S"`
 echo $time
+
+# 连续输出连续的数子或者字母
+echo {1..100}
+echo {A..z}
+#  查看命令及路径 dirname 及 basename 命令 功能用户
+echo $0
+dirname $0
+basename $0
+# $# 实践 
+echo  $1 $2 $3 $4 $5 $6 $7 $8 $9
+echo $#         # 打印脚本命令行参数的个数
+count=$#
+echo $count
+
+echo \$$#
+
+# exec 命令： 在不创建新的子进程的前提下，转去执行指定命令
+
+exec date
+
