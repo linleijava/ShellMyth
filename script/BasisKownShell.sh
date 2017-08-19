@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 # 记录shell方面的常量信息
 
@@ -71,5 +71,44 @@ echo \$$#
 
 # exec 命令： 在不创建新的子进程的前提下，转去执行指定命令
 
-exec date
+# exec date
 
+# Shell 变量子串的实践
+
+Wife="Lovely Yangyang"
+
+echo ${Wife}
+
+echo "变量值的长度"
+
+echo $Wife|wc -l
+expr length "$Wife"
+echo "$Wife"| awk '{print length($0)}'
+
+# time for n in {1..100}; do char=`seq -s "Wife" 100`; echo ${#char}; done
+# for n in {1..10}; do char=`seq -s "Wife" 100`; echo ${#char}; done
+#
+echo "-------------------"
+
+echo  "shell变量"
+
+
+Para=abcABC123ABCabc
+echo $Para
+
+echo ${Para:2}
+echo ${Para:2:6}
+#printf("---------345------")
+echo ${Para##a*c}
+echo ${Para%%a*c}
+#批量替换文件名称
+for f in `ls *IMG*`; do mv $f `echo ${f//IMG/LINYUPENG}`;done
+
+echo $test  # 变量未设置，输出时为空
+result=${test:-UNSET} # test 没有值， 则返回UNSET 
+
+echo $result
+TEST="LINYUPNEG"
+result1=${TEST:-UNSET}
+echo $result1
+echo ${key:?not defined}
