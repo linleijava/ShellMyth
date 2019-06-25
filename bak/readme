@@ -1,0 +1,21 @@
+Mongodb，Redis，Mysql）附恢复参考
+
+ 
+
+ 
+
+说明：
+
+##独立的备份服务器集中备份，备份硬盘空间足够，与数据的连接通畅，需要Mongodb\Redis\Mysql客户端。
+
+##备份保留时间为一周（默认），备份周期一天（以定时任务方式调用shell脚本）。
+
+##用户名与密码以明文保存，需要慎用！
+
+##运行方式
+
+举例：每天凌晨执行Mongodb的备份
+
+crontab  -e
+
+0 0 * * * /bin/bash /kingdee/mongodbback.sh

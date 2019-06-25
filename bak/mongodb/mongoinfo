@@ -1,0 +1,5 @@
+#格式：mongodbip:mongodbport:instance
+10.0.19.34,27017,datacore
+10.0.19.34,27019,newfsmeta
+10.0.19.34,27020,other
+10.0.19.34,27018,xtdb
