@@ -153,3 +153,7 @@ do
    mydump
 
 done
+
+# mongodb 文件导入
+
+# /bin/mongoimport -h 192.168.0.17:27020 --username user --password mongodb -d cloudflow -c T_Workflow_ActivityInst --file T_Workflow_ActivityInst.json
