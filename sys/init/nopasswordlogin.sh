@@ -10,7 +10,7 @@ ll -a                   #检查是否存在.ssh目录，没有就mkdir .ssh
 cd .ssh                 #没有目录就创建！
 ssh-keygen -t rsa       #执行命令
 # 更改.ssh目录、authorized_keys密钥权限（yzj账号下）
-cat /home/stock/.ssh/id_rsa.pub >> /home/yzj/.ssh/authorized_keys
+cat /home/stock/.ssh/id_rsa.pub >> /home/stock/.ssh/authorized_keys
 chmod 600 /home/stock/.ssh/authorized_keys
 chmod 700 /home/stock/.ssh
 
