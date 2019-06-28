@@ -92,6 +92,17 @@ echo "root hard nproc unlimited" >>/etc/security/limits.d/90-nproc.conf
 echo "* soft memlock unlimited" >>/etc/security/limits.d/90-nproc.conf
 echo "* hard memlock unlimited" >>/etc/security/limits.d/90-nproc.conf
 
+# CentOS7 查看防火墙状态
+
+firewall-cmd --state
+
+#停止firewall
+
+systemctl stop firewalld.service
+
+#禁止firewall开机启动
+
+# systemctl disable firewalld.service
 
 #4.sudo权限设置
 #echo "stock ALL=NOPASSWD:/bin/mount/,/bin/umount,/usr/bin/yum" >> /etc/sudoers
