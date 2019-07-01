@@ -112,3 +112,6 @@ TEST="LINYUPNEG"
 result1=${TEST:-UNSET}
 echo $result1
 echo ${key:?not defined}
+
+# 批量修改
+sed -i '/maxThreads/s/200/100/g' /app/jetty/domains/*/etc/jetty.xml
