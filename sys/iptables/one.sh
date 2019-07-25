@@ -1,4 +1,21 @@
 #
+
+#停止firewalld服务
+systemctl stop firewalld
+#禁用firewalld服务
+systemctl mask firewalld
+
+
+#先检查是否安装了iptables
+service iptables status
+#安装iptables
+yum install -y iptables
+#升级iptables
+yum update iptables 
+#安装iptables-services
+yum install iptables-services
+
+
 1. iptables  配置文件
 
 # vim /etc/sysconfig/iptables 增加防火墙设置
