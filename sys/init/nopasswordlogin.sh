@@ -18,4 +18,16 @@ chmod 700 /home/stock/.ssh
 
 su - stock
 scp authorized_keys stock@主机IP:/home/stock/.ssh/   #将主操作密钥传个各个服务器，实现免密登录操作。
-
+# 采用 expect 批量处理 
+# spawn  scp /home/yzj/.ssh/authorized_keys yzj@10.10.182.170:/home/yzj/.ssh/
+for ip in `cat iplist`
+do
+       expect -c "
+             spawn scp /home/yzj/.ssh/authorized_keys yzj@$ip:/home/yzj/.ssh/
+             expect {
+                     \"*assword\" {set timeout 300; send \"kingdee@1203\r\"; exp_continue;}
+                     \"yes/no\" {send \"yes\r\";}
+                     }  
+       expect eof"
+       echo $ip
+done
