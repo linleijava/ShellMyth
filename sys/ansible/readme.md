@@ -11,6 +11,26 @@
 "mode": "SENTINAL" // 集群安装模式
 }
 
+
+ansible-playbook --help
+Usage: ansible-playbook playbook.yml
+
+Options:
+  -e EXTRA_VARS,--extra-vars=EXTRA_VARS # 设置额外的变量，格式为key/value。-e "key=KEY"，
+                                        # 如果是文件方式传入变量，则-e "@param_file"
+  --flush-cache          # 清空收集到的fact信息缓存
+  --force-handlers       # 即使task执行失败，也强制执行handlers
+  --list-tags            # 列出所有可获取到的tags
+  --list-tasks           # 列出所有将要被执行的tasks
+  -t TAGS,--tags=TAGS    # 以tag的方式显式匹配要执行哪些tag中的任务
+  --skip-tags=SKIP_TAGS  # 以tag的方式忽略某些要执行的任务。被此处匹配的tag中的任务都不会执行
+  --start-at-task=START_AT_TASK # 从此task开始执行playbook
+  --step                 # one-step-at-a-time:在每一个任务执行前都进行交互式确认
+  --syntax-check         # 检查playbook语法
+
+
+  # 很关键的范例：
+
 - hosts: localhost
   connection: local
   tasks:
