@@ -1,0 +1,5 @@
+
+
+# 批量操作
+
+ansible -i all.list all -m shell -a "free -g"
